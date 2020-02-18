@@ -33,7 +33,7 @@ func (m *Master) server() {
 	rpc.HandleHTTP()
 	//l, e := net.Listen("tcp", ":1234")
 	os.Remove("mr-socket")
-	l, e := net.Listen("unix", "mr-socket")
+	l, e := net.Listen("unix", "mr-socket")  //using UDS
 	if e != nil {
 		log.Fatal("listen error:", e)
 	}
